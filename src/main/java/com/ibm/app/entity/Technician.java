@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -37,5 +38,8 @@ public class Technician implements Serializable{
 	
 	@Column(name = "TIMESTAMP")
 	private LocalDateTime timestamp;
-
+	
+//	@Lob
+	@Column(name = "current_assignment_response")
+	private String CurrentAssignmentResponse;
 }

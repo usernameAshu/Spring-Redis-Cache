@@ -4,9 +4,28 @@ Don't cache (Select * from ) queries. Redis caches these records under a SimpleK
 Commands:
 docker exec -it {container_id} redis-cli
 
+TO view all the keys:
+KEYS *
+
 GET key
 DEL key1 key2 key3 
 
 To delete all keys in the database:
 FLUSHDB 
 
+When using password in redis cache: 
+After logging into the docker container using
+>docker exec -it {container_id} redis-cli
+Enter:
+>AUTH {password}
+
+Now you will be able to view all keys  
+
+---in lumen/rancher kubectl----
+kubectl get pods --namespace fastivr-dev 
+kubectl get service --namespace fastivr-dev 
+kubectl get deployment --namespace fastivr-dev
+
+kubectl exec -it -n {namespace-name} {pod-name} redis-cli
+kubectl exec -it -n fastivr-dev fastivr-redis-dev1-7cd4df4bdc-j8mh9 redis-cli
+ 

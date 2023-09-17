@@ -11,9 +11,10 @@
 	</parent>
 	<groupId>com.ibm</groupId>
 	<artifactId>Spring-Product-Cache</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
 	<name>Spring-Product-Cache</name>
-	<description>Spring Authorization server</description>
+	<description>Spring Project to test redis cache</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -53,18 +54,21 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+			<!-- <version>5.5.1</version>  --><!-- Use the version compatible with your Spring Boot version -->
+		</dependency>
 
 
 	</dependencies>
 
 	<build>
-	<finalName>Spring-Product-Cache</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-				
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
